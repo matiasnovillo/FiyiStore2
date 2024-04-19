@@ -1,0 +1,18 @@
+@page "/FiyiStore/Client/{ClientId:int}"
+@model ClientId
+@{
+    Layout = "_LayoutDashboard";
+    ViewData["Title"] = "Agregar client";
+}
+
+<h1 class="bg-info text-white">Create a Movie</h1>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Client?.Email"></label>
+        <input type="email" asp-for="@Model.Client?.Email" class="form-control" />
+        <span asp-validation-for="@Model.Client?.Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
